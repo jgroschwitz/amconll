@@ -7,3 +7,8 @@
 .idea/vcs.xml
 .idea/workspace.xml
 *.pyc
+amconll.egg-info/dependency_links.txt
+amconll.egg-info/PKG-INFO
+amconll.egg-info/SOURCES.txt
+amconll.egg-info/top_level.txt
+dist/amconll-1.0.0.tar.gz
