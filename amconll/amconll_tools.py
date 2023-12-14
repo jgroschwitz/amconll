@@ -302,3 +302,32 @@ def write_conll(file_name: str, sentences: Iterable[AMSentence]):
         for sentence in sentences:
             f.write(str(sentence))
             f.write('\n\n')
+
+
+def reorder_amconll(amr_corpus, amconll_file, output_path):
+    """
+    Re-orders an amconll file to match an AMR corpus file
+    Note: requires the penman library (pip install penman)
+    :param amr_corpus: an AMR corpus file with IDs
+    :param amconll_file: an amconll file with IDs
+    :param output_path: where to write the new amconll file
+    """
+
+    import penman
+    amrs = penman.load(amr_corpus)
+
+    # get the amconll entries
+    amconll_file_connection = open(amconll_file, 'r')
+    amconll_generator = parse_amconll(amconll_file_connection)
+    amconll_entries = list(amconll_generator)
+    amconll_file_connection.close()
+
+    new_amconll = []
+    for amr in amrs:
+        id = amr.metadata["id"]
+        # inefficiently find the matching sentence from the amconll file
+        for entry in amconll_entries:
+            if id == entry.attributes["id"]:
+                new_amconll.append(entry)
+
+    write_conll(output_path, new_amconll)

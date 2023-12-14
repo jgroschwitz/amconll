@@ -11,5 +11,11 @@ pip install amconll
 Or, if you prefer,
 
 ```
-python3 -m pip install amconll
+python -m pip install amconll
+```
+
+The method `reorder_amconll` requires the penman library, which you can install with
+
+```
+pip install penman
 ```

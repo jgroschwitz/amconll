@@ -6,9 +6,12 @@
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/.gitignore
 *.pyc
 amconll.egg-info/dependency_links.txt
 amconll.egg-info/PKG-INFO
 amconll.egg-info/SOURCES.txt
 amconll.egg-info/top_level.txt
 dist/amconll-1.0.0.tar.gz
+README.md~
+.gitignore~
