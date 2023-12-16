@@ -15,3 +15,5 @@ amconll.egg-info/top_level.txt
 dist/amconll-1.0.0.tar.gz
 README.md~
 .gitignore~
+dist/amconll-1.0.2-py3-none-any.whl
+dist/amconll-1.0.2.tar.gz
